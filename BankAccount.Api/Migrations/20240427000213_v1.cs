@@ -1,0 +1,39 @@
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
+
+#nullable disable
+
+namespace BankAccount.Api.Migrations
+{
+    /// <inheritdoc />
+    public partial class v1 : Migration
+    {
+        /// <inheritdoc />
+        protected override void Up(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.AlterColumn<DateTime>(
+                name: "Date",
+                table: "Transaction",
+                type: "DateTime",
+                nullable: false,
+                defaultValue: new DateTime(2024, 4, 27, 0, 2, 12, 732, DateTimeKind.Utc).AddTicks(3879),
+                oldClrType: typeof(DateTime),
+                oldType: "DateTime",
+                oldDefaultValue: new DateTime(2024, 4, 26, 20, 25, 54, 353, DateTimeKind.Utc).AddTicks(440));
+        }
+
+        /// <inheritdoc />
+        protected override void Down(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.AlterColumn<DateTime>(
+                name: "Date",
+                table: "Transaction",
+                type: "DateTime",
+                nullable: false,
+                defaultValue: new DateTime(2024, 4, 26, 20, 25, 54, 353, DateTimeKind.Utc).AddTicks(440),
+                oldClrType: typeof(DateTime),
+                oldType: "DateTime",
+                oldDefaultValue: new DateTime(2024, 4, 27, 0, 2, 12, 732, DateTimeKind.Utc).AddTicks(3879));
+        }
+    }
+}
